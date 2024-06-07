@@ -38,6 +38,10 @@ const PersonSchema = new Schema ({
         trim:true,
         required: false
     },
+    idPerson:{
+        type:Number,
+
+    }
 
 });
 
