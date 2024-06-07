@@ -67,7 +67,7 @@ controller.findPersonByFamily = async(req,res,next)=>{
 controller.findAllPerson = async(req,res,next)=>{
     try {
 
-        const persons = Person.find();
+        const persons = await Person.find();
 
         if(!persons){
             return res.status(404).json({"message":"People not found"})
