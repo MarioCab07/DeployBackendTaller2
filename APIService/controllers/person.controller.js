@@ -22,7 +22,7 @@ controller.add = async(req,res,next)=>{
             return res.status(409).json({error:"Error saving person"});
         }
 
-        return res.status(201).json({"result":"Family saved"});
+        return res.status(201).json({"result":"Person saved"});
 
     } catch (error) {
         console.error(error);
@@ -53,7 +53,7 @@ controller.findPersonByFamily = async(req,res,next)=>{
         
         const {identifier}=req.params;
 
-        const persons = await Person.find({id_familia:identifier})
+        const persons = await Person.find({idfamilia:identifier})
 
         return res.status(200).json({persons})
 

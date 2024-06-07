@@ -34,7 +34,7 @@ controller.delete = async(req,res,next)=>{
     try {
         const {identifier}=req.params;
 
-        const family = await Family.findOneAndDelete({id:identifier});
+        const family = await Family.findOneAndDelete({idFamilia:identifier});
         
         if(!family){
             return res.status(404).json({message:"Family not found"})
