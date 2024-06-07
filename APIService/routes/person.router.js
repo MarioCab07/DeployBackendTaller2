@@ -7,6 +7,8 @@ router.post("/add",personController.add);
 
 router.get("/get/:identifier",personController.findPersonByFamily);
 
+router.get("/getAll",personController.findAllPerson)
+
 router.delete("/delete/:identifier",personController.delete);
 
 module.exports = router;

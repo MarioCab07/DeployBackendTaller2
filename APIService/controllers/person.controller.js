@@ -63,4 +63,21 @@ controller.findPersonByFamily = async(req,res,next)=>{
     }
 }
 
+
+controller.findAllPerson = async(req,res,next)=>{
+    try {
+
+        const persons = Person.find();
+
+        if(!persons){
+            return res.status(404).json({"message":"People not found"})
+        }
+
+        return res.status(200).json({persons})
+
+    } catch (error) {
+        
+    }
+}
+
 module.exports = controller;
