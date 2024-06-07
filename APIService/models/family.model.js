@@ -27,11 +27,11 @@ const FamilySchema =  new Schema ({
         trim:true,
         required:true
     },
-    id:{
+    idFamilia:{
         type:Number,
         trim:true,
         required:true
     }
-},{timestamps:true})
+})
 
 module.exports = Mongoose.model("family",FamilySchema)

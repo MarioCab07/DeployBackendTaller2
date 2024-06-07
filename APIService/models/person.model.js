@@ -33,12 +33,12 @@ const PersonSchema = new Schema ({
         trim:true,
         required: false
     },
-    id_familia: { 
+    idfamilia: { 
         type: Number, 
         trim:true,
         required: false
     },
 
-},{timestamps:true});
+});
 
 module.exports = Mongoose.model("person",PersonSchema);

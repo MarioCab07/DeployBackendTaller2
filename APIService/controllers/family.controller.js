@@ -21,7 +21,7 @@ controller.add = async(req,res,next)=>{
 
         }
 
-        return res.status(201).json({familySaved});
+        return res.status(201).json({"result":"Family saved"});
 
     } catch (error) {
         console.error(error);
@@ -40,7 +40,7 @@ controller.delete = async(req,res,next)=>{
             return res.status(404).json({message:"Family not found"})
         }
 
-        return res.status(200).json({message:"Family deleted"})
+        return res.status(200).json({"result":"Family deleted"})
 
     } catch (error) {
         console.error(error);

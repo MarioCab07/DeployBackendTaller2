@@ -22,7 +22,7 @@ controller.add = async(req,res,next)=>{
             return res.status(409).json({error:"Error saving person"});
         }
 
-        return res.status(201).json({personSaved});
+        return res.status(201).json({"result":"Family saved"});
 
     } catch (error) {
         console.error(error);
