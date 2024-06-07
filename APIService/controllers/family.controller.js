@@ -4,14 +4,14 @@ const controller={};
 
 controller.add = async(req,res,next)=>{
     try {
-        const {nombre,canton,nivelRiesgo,tipoVivienda,id}= req.body;
+        const {nombre,canton,nivelRiesgo,tipoVivienda,idFamilia}= req.body;
         
         const family = new Family({
             nombre:nombre,
             canton:canton,
             nivelRiesgo:nivelRiesgo,
             tipoVivienda:tipoVivienda,
-            id:id
+            idFamilia:idFamilia
         });
 
         const familySaved = await family.save();

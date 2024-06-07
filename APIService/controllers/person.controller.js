@@ -4,7 +4,7 @@ const controller = {};
 
 controller.add = async(req,res,next)=>{
     try {
-        const {DUI,nombre,fecha_nacimiento,nivel_educacion,lectura,escritura,id_familia} = req.body;
+        const {DUI,nombre,fecha_nacimiento,nivel_educacion,lectura,escritura,idfamilia} = req.body;
 
         const person = new Person({
             DUI:DUI,
@@ -13,7 +13,7 @@ controller.add = async(req,res,next)=>{
             nivel_educacion:nivel_educacion,
             lectura:lectura,
             escritura:escritura,
-            id_familia:id_familia
+            idfamilia:idfamilia
         });
 
         const personSaved = await person.save();
