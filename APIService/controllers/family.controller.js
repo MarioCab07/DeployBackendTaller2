@@ -17,7 +17,7 @@ controller.add = async(req,res,next)=>{
         const familySaved = await family.save();
 
         if(!familySaved){
-            return res.status(409).json({error:"Error saving family"});
+            return res.status(409).json({message:"Error saving family"});
 
         }
 
@@ -25,7 +25,7 @@ controller.add = async(req,res,next)=>{
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
@@ -44,7 +44,7 @@ controller.delete = async(req,res,next)=>{
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
@@ -57,7 +57,7 @@ controller.findAll=async(req,res,next)=>{
         return res.status(200).json({families})
     }catch(error){
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }   
 }
 

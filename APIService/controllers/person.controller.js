@@ -19,14 +19,14 @@ controller.add = async(req,res,next)=>{
         const personSaved = await person.save();
 
         if(!personSaved){
-            return res.status(409).json({error:"Error saving person"});
+            return res.status(409).json({message:"Error saving person"});
         }
 
         return res.status(201).json({"result":"Person saved"});
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
@@ -40,11 +40,11 @@ controller.delete = async(req,res,next)=>{
             return res.status(404).json({message:"Person not found"})
         }
 
-        return res.status(200).json({message:"Person deleted"})
+        return res.status(200).json({"result":"Person deleted"})
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
@@ -59,7 +59,7 @@ controller.findPersonByFamily = async(req,res,next)=>{
 
     } catch (error) {
         console.error(error);
-        return res.status(500).json({error:"Internal Server Error"});
+        return res.status(500).json({message:"Internal Server Error"});
     }
 }
 
@@ -76,7 +76,9 @@ controller.findAllPerson = async(req,res,next)=>{
         return res.status(200).json({persons})
 
     } catch (error) {
-        
+        console.error(error);
+        return res.status(500).json({message:"Internal Server Error"});
+
     }
 }
 
