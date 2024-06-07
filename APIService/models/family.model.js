@@ -31,7 +31,16 @@ const FamilySchema =  new Schema ({
         type:Number,
         trim:true,
         required:true
+    },
+    latitud:{
+        type:Number,
+        trim:true,
+    },
+    longitud:{
+        type:Number,
+        trim:true
     }
+    
 })
 
 module.exports = Mongoose.model("family",FamilySchema)
