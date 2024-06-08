@@ -30,7 +30,8 @@ const FamilySchema =  new Schema ({
     idFamilia:{
         type:Number,
         trim:true,
-        required:true
+        required:true,
+        unique:true,
     },
     latitud:{
         type:Number,

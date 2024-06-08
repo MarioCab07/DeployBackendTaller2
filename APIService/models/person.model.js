@@ -40,6 +40,7 @@ const PersonSchema = new Schema ({
     },
     idPerson:{
         type:Number,
+        
 
     }
 
