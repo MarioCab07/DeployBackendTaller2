@@ -7,7 +7,7 @@ controller.add = async(req,res,next)=>{
         const {DUI,nombre,fecha_nacimiento,nivel_educacion,lectura,escritura,idfamilia} = req.body;
 
 
-        const _person = await Person.find({DUI:DUI})
+        const _person = await Person.findOne({ DUI: DUI });
         
         if(_person){
             return res.status(409).json({message:_person});
