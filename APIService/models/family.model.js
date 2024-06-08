@@ -4,7 +4,6 @@ const Schema = Mongoose.Schema;
 const FamilySchema =  new Schema ({
     nombre:{
         type:String,
-        trim:true,
         required:true,
         unique:true,
     },

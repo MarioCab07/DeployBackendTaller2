@@ -4,7 +4,6 @@ const Schema = Mongoose.Schema;
 const PersonSchema = new Schema ({
     DUI: { 
         type: String, 
-        trim:true,
         required: false,
         unique:true
     },
@@ -40,7 +39,7 @@ const PersonSchema = new Schema ({
     },
     idPerson:{
         type:Number,
-        
+
 
     }
 
