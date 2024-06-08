@@ -9,7 +9,7 @@ controller.add = async(req,res,next)=>{
         const _family = Family.find({nombre:nombre})
 
         if(_family){
-            return res.status(409).json({message:"Error saving family"});
+            return res.status(409).json({message:_family});
         }
         
         const family = new Family({

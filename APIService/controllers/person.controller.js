@@ -10,7 +10,7 @@ controller.add = async(req,res,next)=>{
         const _person = Person.find({DUI:DUI})
         
         if(_person){
-            return res.status(409).json({message:"Error saving person"});
+            return res.status(409).json({message:_person});
 
         }
 
