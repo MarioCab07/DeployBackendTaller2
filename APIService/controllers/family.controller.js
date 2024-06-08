@@ -5,6 +5,12 @@ const controller={};
 controller.add = async(req,res,next)=>{
     try {
         const {nombre,canton,nivelRiesgo,tipoVivienda,idFamilia,latitud,longitud}= req.body;
+
+        const _family = Family.find({nombre:nombre})
+
+        if(_family){
+            return res.status(409).json({message:"Error saving family"});
+        }
         
         const family = new Family({
             nombre:nombre,

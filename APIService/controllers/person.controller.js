@@ -6,6 +6,14 @@ controller.add = async(req,res,next)=>{
     try {
         const {DUI,nombre,fecha_nacimiento,nivel_educacion,lectura,escritura,idfamilia} = req.body;
 
+
+        const _person = Person.find({DUI:DUI})
+        
+        if(_person){
+            return res.status(409).json({message:"Error saving person"});
+
+        }
+
         const person = new Person({
             DUI:DUI,
             nombre:nombre,
